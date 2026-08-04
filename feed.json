@@ -1,0 +1,13 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Tarot Amnesty",
+    "description": "",
+    "home_page_url": "https://tarotamnesty.org",
+    "feed_url": "https://tarotamnesty.org/feed.json",
+    "user_comment": "",
+    "author": {
+        "name": "Finbarre Snarey"
+    },
+    "items": [
+    ]
+}
