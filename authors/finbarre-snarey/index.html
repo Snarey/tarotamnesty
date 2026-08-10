@@ -4,11 +4,15 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Project",
-      "@id": "https://tarotamnesty.org/#project",
+      "@type": [
+        "Organization",
+        "Project"
+      ],
+      "@id": "https://tarotamnesty.org/#organization",
       "name": "Tarot Amnesty",
       "url": "https://tarotamnesty.org/",
-      "description": "Tarot Amnesty is an independent voluntary, not-for-profit community project founded by Finbarre Snarey. It receives unwanted tarot and oracle decks and gives them freely to new readers at community tarot events. Decks are never bought or sold.",
+      "description": "Tarot Amnesty is a UK voluntary, not-for-profit community project that accepts unwanted tarot and oracle decks and rehomes them free of charge through community tarot events and meetups.",
+      "slogan": "Donate your deck. Give it another life.",
       "founder": {
         "@id": "https://finbarre.com/#person"
       },
@@ -28,18 +32,39 @@
         "name": "United Kingdom"
       },
       "knowsAbout": [
-        "Unwanted tarot decks",
-        "Inherited tarot decks",
-        "Incomplete tarot decks",
-        "Well-loved tarot decks",
         "Tarot deck donation",
+        "Donating tarot cards",
+        "Unwanted tarot decks",
+        "Used tarot decks",
+        "Inherited tarot decks",
         "Tarot deck rehoming",
         "Oracle deck donation",
+        "Oracle deck rehoming",
         "Community tarot events",
         "Free redistribution of tarot and oracle decks"
       ],
+      "potentialAction": {
+        "@id": "https://tarotamnesty.org/#donate-deck-action"
+      },
       "subjectOf": {
         "@id": "https://tarotamnesty.org/#website"
+      }
+    },
+    {
+      "@type": "DonateAction",
+      "@id": "https://tarotamnesty.org/#donate-deck-action",
+      "name": "Donate an unwanted tarot or oracle deck",
+      "description": "Donate an unwanted, used, inherited or well-loved tarot or oracle deck to Tarot Amnesty so it can be rehomed free of charge with a new reader.",
+      "recipient": {
+        "@id": "https://tarotamnesty.org/#organization"
+      },
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://tarotamnesty.org/offer-a-deck/",
+        "actionPlatform": [
+          "https://schema.org/DesktopWebPlatform",
+          "https://schema.org/MobileWebPlatform"
+        ]
       }
     },
     {
@@ -60,38 +85,33 @@
       "@id": "https://tarotamnesty.org/#website",
       "url": "https://tarotamnesty.org/",
       "name": "Tarot Amnesty",
-      "description": "A voluntary, not-for-profit community project that receives unwanted tarot and oracle decks and gives them freely to new readers at community tarot events.",
+      "description": "Donate unwanted tarot and oracle decks to Tarot Amnesty. Donated decks are rehomed free of charge with new readers through community tarot events and meetups.",
       "inLanguage": "en-GB",
       "publisher": {
-        "@id": "https://tarotamnesty.org/#project"
+        "@id": "https://tarotamnesty.org/#organization"
       },
-      "about": [
-        {
-          "@id": "https://tarotamnesty.org/#project"
-        },
-        {
-          "@id": "https://tarotamnesty.org/#deck-rehoming-service"
-        }
-      ]
+      "about": {
+        "@id": "https://tarotamnesty.org/#organization"
+      }
     },
     {
       "@type": "WebPage",
       "@id": "https://tarotamnesty.org/#webpage",
       "url": "https://tarotamnesty.org/",
-      "name": "Tarot Amnesty",
-      "description": "Pass on an unwanted, inherited, incomplete or well-loved tarot or oracle deck so it can be given freely to a new reader.",
+      "name": "Tarot Amnesty | Donate Unwanted Tarot and Oracle Decks",
+      "description": "Donate an unwanted tarot or oracle deck to Tarot Amnesty and help give it a new home. Used, inherited and well-loved decks are rehomed free of charge.",
       "inLanguage": "en-GB",
       "isPartOf": {
         "@id": "https://tarotamnesty.org/#website"
       },
       "about": {
-        "@id": "https://tarotamnesty.org/#project"
+        "@id": "https://tarotamnesty.org/#organization"
       },
       "mainEntity": {
-        "@id": "https://tarotamnesty.org/#project"
+        "@id": "https://tarotamnesty.org/#organization"
       },
-      "mentions": {
-        "@id": "https://tarotamnesty.org/#deck-rehoming-service"
+      "potentialAction": {
+        "@id": "https://tarotamnesty.org/#donate-deck-action"
       },
       "breadcrumb": {
         "@id": "https://tarotamnesty.org/#breadcrumb"
@@ -112,13 +132,18 @@
     {
       "@type": "Service",
       "@id": "https://tarotamnesty.org/#deck-rehoming-service",
-      "name": "Free tarot and oracle deck rehoming",
-      "alternateName": "Pass on an unwanted tarot or oracle deck",
+      "name": "Tarot and oracle deck donation and rehoming",
+      "alternateName": [
+        "Donate a tarot deck",
+        "Donate tarot cards",
+        "Donate an oracle deck",
+        "Tarot deck rehoming"
+      ],
       "url": "https://tarotamnesty.org/offer-a-deck/",
-      "serviceType": "Voluntary, not-for-profit rehoming of unwanted tarot and oracle decks",
-      "description": "A free service through which people can offer unwanted, inherited, incomplete or well-loved tarot and oracle decks. Accepted decks are received with care and later given freely to new readers at community tarot events. Tarot Amnesty does not buy or sell decks.",
+      "serviceType": "Free rehoming of donated tarot and oracle decks",
+      "description": "Tarot Amnesty accepts unwanted, used, inherited and well-loved tarot and oracle decks and rehomes them free of charge with new readers through community tarot events.",
       "provider": {
-        "@id": "https://tarotamnesty.org/#project"
+        "@id": "https://tarotamnesty.org/#organization"
       },
       "areaServed": {
         "@type": "Country",
@@ -126,7 +151,7 @@
       },
       "audience": {
         "@type": "Audience",
-        "audienceType": "People wishing to pass on an unwanted, inherited, incomplete or well-loved tarot or oracle deck"
+        "audienceType": "People wishing to donate or pass on an unwanted tarot or oracle deck"
       },
       "availableChannel": {
         "@type": "ServiceChannel",
@@ -137,8 +162,8 @@
       "@type": "ContactPage",
       "@id": "https://tarotamnesty.org/offer-a-deck/#webpage",
       "url": "https://tarotamnesty.org/offer-a-deck/",
-      "name": "Offer a tarot or oracle deck",
-      "description": "Contact Tarot Amnesty to offer an unwanted, inherited, incomplete or well-loved tarot or oracle deck.",
+      "name": "Donate a Tarot or Oracle Deck",
+      "description": "Donate an unwanted, used, inherited or well-loved tarot or oracle deck to Tarot Amnesty for free rehoming with a new reader.",
       "inLanguage": "en-GB",
       "isPartOf": {
         "@id": "https://tarotamnesty.org/#website"
@@ -148,6 +173,9 @@
       },
       "mainEntity": {
         "@id": "https://tarotamnesty.org/#deck-rehoming-service"
+      },
+      "potentialAction": {
+        "@id": "https://tarotamnesty.org/#donate-deck-action"
       }
     }
   ]
